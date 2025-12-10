@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHEMA: Don't Just Study. Level Up.</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* BASE STYLES & CYBERPUNK THEME */
+        :root {
+            --color-dark: #121212;
+            --color-accent-blue: #00FFFF; 
+            --color-accent-purple: #9933FF; 
+            --color-text: #E0E0E0;
+            --font-mono: 'Space Mono', monospace;
+            --font-sans: 'Roboto', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+        }
+
+        h1 { color: var(--color-accent-blue); }
+        h2 { color: var(--color-accent-purple); }
+        h3 { color: var(--color-accent-blue); }
+
+        section { padding: 80px 5%; border-bottom: 2px solid rgba(255,255,255,0.05); }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* HEADER */
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: rgba(0,0,0,0.6); border-bottom: 1px solid var(--color-accent-blue);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--color-accent-blue); letter-spacing: 2px; }
+
+        /* BUTTONS & CTA */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--color-accent-blue), var(--color-accent-purple));
+            color: var(--color-dark);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .cta-button:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* GRID LAYOUTS */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card, .quest-card {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-left: 3px solid var(--color-accent-purple);
+            box-shadow: 0 0 15px rgba(0,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover, .quest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0,255,255,0.3);
+        }
+
+        .chat-mockup {
+            background: #1e1e1e;
+            padding: 20px;
+            border: 1px solid var(--color-accent-blue);
+            box-shadow: 0 0 15px rgba(0,255,255,0.3);
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .chat-mockup p { margin: 5px 0; padding: 8px 12px; border-radius: 15px; }
+        .user-msg { text-align: right; background: var(--color-accent-purple); color: white; display: inline-block; float: right; clear: both; }
+        .companion-msg { background: var(--color-accent-blue); color: black; display: inline-block; float: left; clear: both; }
+
+        /* HERO SECTION */
+        #hero {
+            text-align: center;
+            padding: 120px 5%;
+            background-image: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23121212"/><path d="M 0 0 L 100 100 M 100 0 L 0 100" stroke="%23333333" stroke-width="1"/></svg>');
+            background-size: 10px 10px;
+        }
+        #hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 15px var(--color-accent-blue); }
+        #hero h2 { font-size: 1.2rem; color: var(--color-accent-purple); margin-bottom: 20px; }
+
+        /* STAT VISUAL */
+        .stat-visual {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,5 95,30 95,70 50,95 5,70 5,30" stroke="%2300FFFF" stroke-width="2" fill="none"/></svg>') no-repeat center;
+            background-size: 80%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent-purple);
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px var(--color-accent-purple);
+        }
+
+        /* FOOTER CTA */
+        #final-cta { text-align: center; padding: 80px 5%; }
+        #final-cta h2 { font-size: 2rem; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">SCHEMA://</div>
+        <nav></nav>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <h1>SCHEMA:// DONT JUST STUDY. LEVEL UP.</h1>
+            <h2>The Gamified Operating System for Campus Life.</h2>
+            <p>Students are reduced to a 2D GPA. Schema measures 3D value: creativity, hustle, and skills.</p>
+            <a href="#final-cta" class="cta-button">INITIATE PITCH // FUND MY CRAZY</a>
+        </section>
+
+        <section id="mechanics" class="container">
+            <h2>// CHARACTER SHEET 3.0</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <h3>The Stat Polygon</h3>
+                    <p>Six-axis radar chart measuring: INT, CRE, TEC, SOC, EXP, REP.</p>
+                    <div class="stat-visual">TEC: 95%</div>
+                </div>
+                <div class="feature-card">
+                    <h3>XP & Leaderboards</h3>
+                    <p>Earn Campus XP and climb global & niche leaderboards.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Inventory & Trophies</h3>
+                    <p>Display awards as holographic badges and trophies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gemini-companion" class="container">
+            <h2>// GEMINI INTEGRATION: THE 10X FACTOR</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <h3>Personalized Coaching</h3>
+                    <div class="chat-mockup">
+                        <p class="companion-msg"><strong>Companion (Fox):</strong> Your TEC stat is low. Gemini suggests the 'Advanced AI Ethics' course. [ENROLL]</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3>Skill Synthesis & Validation</h3>
+                    <p>Gemini reads code & portfolio to provide objective ratings.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Dynamic Evolution</h3>
+                    <p>Companion form evolves algorithmically based on your stats.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="connection" class="container">
+            <h2>// THE TAVERN: CONNECTING TALENT</h2>
+            <div class="grid-3">
+                <div class="quest-card">
+                    <h3>Quest: Robotics Project</h3>
+                    <p><strong>REWARD:</strong> +500 CXP & Project Credit</p>
+                </div>
+                <div class="quest-card">
+                    <h3>Guild Halls (Clubs)</h3>
+                    <p>Post Club Quests to recruit talent and engage members.</p>
+                </div>
+                <div class="quest-card">
+                    <h3>Admin Dashboard</h3>
+                    <p>Real-time data on student engagement and trends.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta" class="container">
+            <h2>SCHEMA: THE CASE FOR ₹1 CRORE.</h2>
+            <a href="#" class="cta-button" style="padding: 20px 50px; font-size: 1.2rem;">INITIATE SCHEMA: FUND OUR CRAZY VISION</a>
+        </section>
+    </main>
+</body>
+</html>
